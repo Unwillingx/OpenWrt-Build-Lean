@@ -151,9 +151,8 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.MANAGE_REALISE }}
       with:
         tag_name: ${{ steps.tag.outputs.release_tag }}
-        files: 
-          ${{ env.FIRMWARE }}/openwrt-armvirt-64-default-rootfs.tar.gz
-          ${{ env.PACKAGED_OUTPUTPATH }}/*
+        files: ${{ env.FIRMWARE }}/openwrt-armvirt-64-default-rootfs.tar.gz
+    
 
     - name: Delete workflow runs
       uses: GitRML/delete-workflow-runs@main
@@ -168,4 +167,4 @@ jobs:
         keep_latest: 3
         delete_tags: true
       env:
-        GITHUB_TOKEN: ${{ secrets.MANAGE_REALISE }}
+        GITHUB_TOKEN: ${{ secrets.MANAGE_RELEASE }}
