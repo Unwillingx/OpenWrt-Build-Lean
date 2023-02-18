@@ -151,7 +151,7 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.MANAGE_REALISE }}
       with:
         tag_name: ${{ steps.tag.outputs.release_tag }}
-        files: ${{ env.FIRMWARE }}/openwrt-armvirt-64-default-rootfs.tar.gz
+        files: ${{ env.FIRMWARE }}/*
     
 
     - name: Delete workflow runs
