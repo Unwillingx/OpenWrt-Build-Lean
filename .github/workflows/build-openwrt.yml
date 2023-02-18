@@ -136,15 +136,6 @@ jobs:
       with:
         name: OpenWrt_firmware${{ env.DEVICE_NAME }}${{ env.FILE_DATE }}
         path: ${{ env.FIRMWARE }}
-   
-    - name: Package Armvirt as OpenWrt
-      uses: unifreq/openwrt_packit@master
-      env:
-        OPENWRT_ARMVIRT: ${{ env.FIRMWARE }}/*rootfs.tar.gz
-        KERNEL_VERSION_DIR: kernel_n1
-        PACKAGE_SOC: s905d
-        KERNEL_VERSION_NAME: 6.1.12
-        GH_TOKEN: ${{ secrets.MANAGE_REALISE }}
 
     - name: Generate release tag
       id: tag
