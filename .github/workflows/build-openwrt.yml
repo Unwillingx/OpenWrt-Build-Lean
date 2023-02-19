@@ -183,8 +183,7 @@ jobs:
       with:
         tag_name: ${{ steps.tag.outputs.release_tag }}
         body_path: release.txt
-        files: 
-          ${{ env.PACKAGED_OUTPUTPATH }}/*
+        files: ${{ env.PACKAGED_OUTPUTPATH }}/*
     
 
     - name: Delete workflow runs
