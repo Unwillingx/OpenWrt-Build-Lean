@@ -26,7 +26,7 @@ env:
   CONFIG_FILE: .config
   DIY_P1_SH: diy-part1.sh
   DIY_P2_SH: diy-part2.sh
-  UPLOAD_BIN_DIR: false
+  UPLOAD_BIN_DIR: true
   UPLOAD_WETRANSFER: false
   UPLOAD_FIRMWARE: true
   UPLOAD_COWTRANSFER: false
@@ -169,7 +169,7 @@ jobs:
     - name: Package Armvirt as OpenWrt
       uses: unifreq/openwrt_packit@master
       env:
-        OPENWRT_ARMVIRT: ${{ env.FIRMWARE }}/*rootfs.tar.gz
+        OPENWRT_ARMVIRT: openwrt/bin/targets/*/*/*rootfs.tar.gz
         PACKAGE_SOC: s905d
         KERNEL_VERSION_DIR: kernel_n1
         KERNEL_VERSION_NAME: 6.1.12
