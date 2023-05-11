@@ -93,7 +93,7 @@ plugins:
       - matches: qtype 65
         exec: reject 3
 
-      - matches: qname &/etc/mosdns/reject-list.txt &/etc/mosdns/my-reject-list.txt
+      - matches: qname &/etc/mosdns/reject_list.txt
         exec: reject
 
       - exec: prefer_ipv4
@@ -111,12 +111,12 @@ plugins:
       - matches: has_resp
         exec: goto gfw-list
         
-      - matches: qname &/etc/mosdns/direct-list.txt
+      - matches: qname &/etc/mosdns/direct_list.txt
         exec: $forward_local
       - matches: has_resp
         exec: accept
 
-      - matches: qname &/etc/mosdns/proxy-list.txt
+      - matches: qname &/etc/mosdns/proxy_list.txt
         exec: $forward_remote
       - matches: has_resp
         exec: goto gfw-list
