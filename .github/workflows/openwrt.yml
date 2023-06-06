@@ -1,4 +1,4 @@
-name: Build OpenWrt 3
+name: Build OpenWrt official
 
 on:
   repository_dispatch:
