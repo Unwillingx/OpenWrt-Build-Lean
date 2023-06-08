@@ -9,8 +9,8 @@ os.system('wget -cO ./rule_provider/Instagram.yaml https://raw.githubusercontent
 os.system('wget -cO ./rule_provider/Facebook.yaml https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Facebook.yaml')
 os.system('wget -cO ./rule_provider/Spotify.yaml https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Spotify.yaml')
 os.system('wget -cO ./rule_provider/Github.yaml https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Github.yaml')
-os.sytem('wget -cO ./rule_provider/Twitter.yaml https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Twitter.yaml')
-os.sytem('wget -cO ./rule_provider/Telegram.yaml https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/telegramcidr.txt')
+os.system('wget -cO ./rule_provider/Twitter.yaml https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Twitter.yaml')
+os.system('wget -cO ./rule_provider/Telegram.yaml https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/telegramcidr.txt')
 os.system('wget -cO ./rule_provider/Microsoft.yaml https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Microsoft.yaml')
 os.system('wget -cO ./rule_provider/ProxyGFW.yaml https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/ProxyGFWlist.yaml')
 
