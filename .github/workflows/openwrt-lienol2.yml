@@ -1,4 +1,4 @@
-name: Build OpenWrt Lienol
+name: Build OpenWrt Lienol2
 
 on:
   repository_dispatch:
