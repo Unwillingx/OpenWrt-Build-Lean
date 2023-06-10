@@ -10,9 +10,9 @@ on:
         default: 'false'
 
 env:
-  REPO_URL: https://github.com/Lienol/openwrt
+  REPO_URL: https://github.com/openwrt/openwrt.git
   REPO_BRANCH: master
-  CONFIG_FILE: .config5
+  CONFIG_FILE: .config6
   FEEDS_CONF: feeds.conf3.default
   DIY_P1_SH: diy-part1.sh
   DIY_P2_SH: diy-part2.sh
