@@ -37,7 +37,7 @@ for f in e:
     pp.append({'name':n, 'type':'trojan', 'server':server, 'port':'443', 'password':passwd, 'udp':True, 'skip-cert-verify':True})
     
 
-with open('./config/kelecloud.yaml', 'rb') as f:
+with open('./config/xyz.yaml', 'rb') as f:
     x = yaml.safe_load(f)
 Proxy = ['HK', 'SGP', 'JP', 'TW', 'USA']
 HK = []
