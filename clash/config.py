@@ -3,7 +3,7 @@ import os
 import base64
 import yaml
 
-with open('fig.txt', 'r') as f:
+with open('./fig.txt', 'r') as f:
     c = f.readlines()
     f.close()
 print(c)
@@ -143,6 +143,6 @@ for k in x.keys():
     else:    
         z[k] = x[k]
 z['rule-providers'] = rps
-with open('./config/myconfig.yaml', 'w', encoding='utf-8') as file:
+with open('./config/myconfig2.yaml', 'w', encoding='utf-8') as file:
     file.write(yaml.dump(z, allow_unicode=True))
 os.system('service openclash restart')
