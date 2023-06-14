@@ -140,6 +140,8 @@ for k in x.keys():
         z[k] = pgs
     elif k == 'rules':
         z[k] = rs 
+    elif k == 'proxies':
+        z[k] = pp
     else:    
         z[k] = x[k]
 z['rule-providers'] = rps
