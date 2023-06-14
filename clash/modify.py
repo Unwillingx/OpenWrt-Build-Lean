@@ -14,7 +14,7 @@ os.system('wget -cO ./rule_provider/Telegram.yaml https://raw.githubusercontent.
 os.system('wget -cO ./rule_provider/Microsoft.yaml https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Microsoft.yaml')
 os.system('wget -cO ./rule_provider/ProxyGFW.yaml https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/ProxyGFWlist.yaml')
 
-with open('./config/kelecloud.yaml', 'rb') as f:
+with open('./config/xyz.yaml', 'rb') as f:
     x = yaml.safe_load(f)
 Proxy = ['HK', 'SGP', 'JP', 'TW', 'USA', 'VN']
 HK = []
