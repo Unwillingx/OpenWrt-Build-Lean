@@ -154,7 +154,7 @@ jobs:
         echo "status=success" >> $GITHUB_OUTPUT
     - name: Package Armvirt as OpenWrt
 #      uses: unifreq/openwrt_packit@master
-      uses: ophub/flippy-openwrt-actions@main
+      uses: unifreq/openwrt_packit@master
       env:
         OPENWRT_ARMVIRT: openwrt/bin/targets/*/*/*rootfs.tar.gz
         PACKAGE_SOC: s905d
