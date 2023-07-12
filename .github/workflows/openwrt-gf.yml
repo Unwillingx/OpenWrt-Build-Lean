@@ -22,7 +22,7 @@ env:
 
   REPO_BRANCH: master
 
-  CONFIG_FILE: .config4
+  CONFIG_FILE: .config4cgf
 
   FEEDS_CONF: feeds.conf2.default
 
@@ -282,22 +282,6 @@ jobs:
 
         echo "status=success" >> $GITHUB_OUTPUT
 
-    - name: Package Armvirt as OpenWrt
-
-      uses: ophub/flippy-openwrt-actions@main
-
-      env:
-
-        OPENWRT_ARMVIRT: openwrt/bin/targets/*/*/*rootfs.tar.gz
-
-        PACKAGE_SOC: s905d
-
-        KERNEL_VERSION_DIR: kernel_n1
-
-        KERNEL_VERSION_NAME: 6.1.21
-
-        GH_TOKEN: ${{ secrets.MANAGE_RELEASE }}
-
     - name: Upload firmware to release
 
       uses: softprops/action-gh-release@v1
@@ -314,7 +298,7 @@ jobs:
 
         body_path: release.txt
 
-        files: ${{ env.PACKAGED_OUTPUTPATH }}/*
+        files: ${{ env.FIRMWARE }}/*
 
     - name: Remove old Releases
 
