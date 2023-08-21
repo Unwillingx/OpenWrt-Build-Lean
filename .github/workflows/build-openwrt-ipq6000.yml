@@ -9,7 +9,6 @@
 #
 
 name: Build OpenWrt ipq60xx
-
 on:
   repository_dispatch:
   workflow_dispatch:
@@ -51,6 +50,7 @@ jobs:
       run: |
         sudo rm -rf /etc/apt/sources.list.d/* /usr/share/dotnet /usr/local/lib/android /opt/ghc
         sudo -E apt-get -qq update
+        sudo -E apt-get -qq upgrade
         sudo -E apt-get -qq install $(curl -fsSL git.io/depends-ubuntu-2004)
         sudo -E apt-get -qq autoremove --purge
         sudo -E apt-get -qq clean
@@ -72,7 +72,19 @@ jobs:
     - name: Update feeds
       run: cd openwrt && ./scripts/feeds update -a
 
+    - name: Update feeds1
+      run: cd openwrt && ./scripts/feeds update -a
+
+    - name: Update feeds2
+      run: cd openwrt && ./scripts/feeds update -a
+
     - name: Install feeds
+      run: cd openwrt && ./scripts/feeds install -a
+
+    - name: Install feeds1
+      run: cd openwrt && ./scripts/feeds install -a
+
+    - name: Install feeds2
       run: cd openwrt && ./scripts/feeds install -a
 
     - name: Load custom configuration
@@ -152,22 +164,13 @@ jobs:
         [ $UPLOAD_COWTRANSFER = true ] && echo "🔗 [Cowtransfer](${{ steps.cowtransfer.outputs.url }})" >> release.txt
         [ $UPLOAD_WETRANSFER = true ] && echo "🔗 [WeTransfer](${{ steps.wetransfer.outputs.url }})" >> release.txt
         echo "status=success" >> $GITHUB_OUTPUT
-    - name: Package Armvirt as OpenWrt
-#      uses: unifreq/openwrt_packit@master
-      uses: unifreq/openwrt_packit@master
-      env:
-        OPENWRT_ARMVIRT: openwrt/bin/targets/*/*/*rootfs.tar.gz
-        PACKAGE_SOC: s905d
-        KERNEL_VERSION_DIR: kernel_n1
-        KERNEL_VERSION_NAME: 6.1.21
-        GH_TOKEN: ${{ secrets.MANAGE_RELEASE }}
         
     - name: Upload firmware directory
       uses: actions/upload-artifact@main
       if: steps.organize.outputs.status == 'success' && !cancelled()
       with:
         name: OpenWrt_firmware${{ env.DEVICE_NAME }}${{ env.FILE_DATE }}
-        path: ${{ env.PACKAGED_OUTPUTPATH }}/*
+        path: ${{ env.FIRMWARE }}
 
     - name: Upload firmware to release
       uses: softprops/action-gh-release@v1
@@ -177,7 +180,7 @@ jobs:
       with:
         tag_name: ${{ steps.tag.outputs.release_tag }}
         body_path: release.txt
-        files: ${{ env.PACKAGED_OUTPUTPATH }}/*
+        files: ${{ env.FIRMWARE }}/*
 
 
     - name: Remove old Releases
