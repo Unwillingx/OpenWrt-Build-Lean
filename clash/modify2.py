@@ -54,7 +54,7 @@ Youtube = ['HK', 'SGP', 'JP', 'TW', 'USA', 'ML', 'TK']
 Spotify = ['HK', 'SGP', 'JP', 'TW', 'USA', 'ML', 'TK', 'DIRECT']
 Github = ['HK', 'SGP', 'JP', 'TW', 'USA', 'ML', 'TK']
 Twitter = ['HK', 'SGP', 'JP', 'TW', 'USA', 'ML', 'TK']
-Telegram = ['HK', 'SGP', 'JP', 'TW', 'USA', 'ML', 'YK']
+Telegram = ['HK', 'SGP', 'JP', 'TW', 'USA', 'ML', 'TK']
 Microsoft = ['HK', 'SGP', 'JP', 'TW', 'USA', 'ML', 'TK', 'DIRECT']
 
 pgs = []
