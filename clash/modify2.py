@@ -62,7 +62,7 @@ for p in x['proxies']:
         TK.append(name)
 Google = Proxy[7:]
 Disneyplus = Google
-Netflix ＝ Google
+Netflix = Google
 Instagram = ['HK', 'SGP', 'JP', 'TW', 'USA', 'ML', 'TK']
 Youtube = ['HK', 'SGP', 'JP', 'TW', 'USA', 'ML', 'TK']
 Spotify = ['HK', 'SGP', 'JP', 'TW', 'USA', 'ML', 'TK', 'DIRECT']
