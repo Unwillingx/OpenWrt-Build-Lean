@@ -1,7 +1,17 @@
 #!/usr/bin/env python
 import yaml
 import os
-
+os.system('rm ./rule_provider/Google.yaml')
+os.system('rm ./rule_provider/Youtube.yaml')
+os.system('rm ./rule_provider/Disneyplus.yaml')
+os.system('rm ./rule_provider/Instagram.yaml')
+os.system('rm ./rule_provider/Facebook.yaml')
+os.system('rm ./rule_provider/Spotify.yaml')
+os.system('rm ./rule_provider/Github.yaml')
+os.system('rm ./rule_provider/Twitter.yaml')
+os.system('rm ./rule_provider/Telegram.yaml')
+os.system('rm ./rule_provider/Microsoft.yaml')
+os.system('rm ./rule_provider/ProxyGFW.yaml')
 os.system('wget -cO ./rule_provider/Google.yaml https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Google.yaml')
 os.system('wget -cO ./rule_provider/Youtube.yaml https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/YouTube.yaml')
 os.system('wget -cO ./rule_provider/Disneyplus.yaml https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/DisneyPlus.yaml')
@@ -78,8 +88,8 @@ pgs.append({'name':'JP', 'type': 'load-balance', 'strategy': 'consistent-hashing
             'proxies':JP, 'url': 'http://www.gstatic.com/generate_204', 'interval': '300'})
 pgs.append({'name':'USA', 'type': 'url-test', 'proxies':USA,
             'url': 'http://www.gstatic.com/generate_204', 'interval': '300'})
-pgs.append({'name':'ML', 'type': 'load-balance', 'strategy': 'consistent-hashing', 'disable-udp': False,
-            'proxies':ML, 'url': 'http://www.gstatic.com/generate_204', 'interval': '300'})
+pgs.append({'name':'ML', 'type': 'url-test', 'proxies':ML,
+            'url': 'http://www.gstatic.com/generate_204', 'interval': '300'})
 pgs.append({'name':'TK', 'type': 'url-test', 'proxies':TK,
             'url': 'http://www.gstatic.com/generate_204', 'interval': '300'})
 rps = {}
