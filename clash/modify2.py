@@ -5,6 +5,7 @@ os.system('rm ./rule_provider/Google.yaml')
 os.system('rm ./rule_provider/Youtube.yaml')
 os.system('rm ./rule_provider/Disneyplus.yaml')
 os.system('rm ./rule_provider/Netflix.yaml')
+os.system('rm ./rule_provider/NetflixIP.yaml')
 os.system('rm ./rule_provider/Instagram.yaml')
 os.system('rm ./rule_provider/Facebook.yaml')
 os.system('rm ./rule_provider/Spotify.yaml')
@@ -121,6 +122,8 @@ rps['Twitter'] = {'type': 'http', 'behavior': 'classical', 'path':'./rule_provid
                            'url':'https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Twitter.yaml'}
 rps['Telegram'] = {'type': 'http', 'behavior': 'ipcidr', 'path':'./rule_provider/Telegram.yaml',
                            'url':'https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/telegramcidr.txt'}
+rps['NetflixIP'] = {'type': 'http', 'behavior': 'ipcidr', 'path':'./rule_provider/Telegram.yaml',
+                           'url':'https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/NetflixIP.yaml'}
 rps['Microsoft'] = {'type': 'http', 'behavior': 'classical', 'path':'./rule_provider/Microsoft.yaml',
                            'url':'https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Microsoft.yaml'}
 rps['ProxyGFW'] = {'type': 'http', 'behavior': 'classical', 'path':'./rule_provider/ProxyGFW.yaml',
@@ -143,6 +146,7 @@ rs.append('DOMAIN-KEYWORD,sciencedirect,DIRECT')
 rs.append('DOMAIN-KEYWORD,springer,DIRECT')
 rs.append('RULE-SET,Disneyplus,Disneyplus')
 rs.append('RULE-SET,Netflix,Netflix')
+rs.append('RULE-SET,NetflixIP,Netflix')
 rs.append('RULE-SET,ProxyGFW,Proxy')
 rs.append('GEOIP,CN,DIRECT')
 rs.append('MATCH,Proxy')
