@@ -4,6 +4,7 @@ import os
 os.system('rm ./rule_provider/Google.yaml')
 os.system('rm ./rule_provider/Youtube.yaml')
 os.system('rm ./rule_provider/Disneyplus.yaml')
+os.system('rm ./rule_provider/Netflix.yaml')
 os.system('rm ./rule_provider/Instagram.yaml')
 os.system('rm ./rule_provider/Facebook.yaml')
 os.system('rm ./rule_provider/Spotify.yaml')
@@ -15,6 +16,7 @@ os.system('rm ./rule_provider/ProxyGFW.yaml')
 os.system('wget -cO ./rule_provider/Google.yaml https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Google.yaml')
 os.system('wget -cO ./rule_provider/Youtube.yaml https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/YouTube.yaml')
 os.system('wget -cO ./rule_provider/Disneyplus.yaml https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/DisneyPlus.yaml')
+os.system('wget -cO ./rule_provider/Netflix.yaml https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Netflix.yaml')
 os.system('wget -cO ./rule_provider/Instagram.yaml https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Instagram.yaml')
 os.system('wget -cO ./rule_provider/Facebook.yaml https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Facebook.yaml')
 os.system('wget -cO ./rule_provider/Spotify.yaml https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Spotify.yaml')
@@ -59,6 +61,7 @@ for p in x['proxies']:
         TK.append(name)
 Google = Proxy[7:]
 Disneyplus = Google
+Netflix ＝ Google
 Instagram = ['HK', 'SGP', 'JP', 'TW', 'USA', 'ML', 'TK']
 Youtube = ['HK', 'SGP', 'JP', 'TW', 'USA', 'ML', 'TK']
 Spotify = ['HK', 'SGP', 'JP', 'TW', 'USA', 'ML', 'TK', 'DIRECT']
@@ -71,6 +74,7 @@ pgs = []
 pgs.append({'name':'Proxy', 'type':'select', 'proxies':Proxy})
 pgs.append({'name':'Google', 'type':'select', 'proxies':Google})
 pgs.append({'name':'Disneyplus', 'type':'select', 'proxies':Disneyplus})
+pgs.append({'name':'Netflix', 'type':'select', 'proxies':Netflix})
 pgs.append({'name':'Instagram', 'type':'select', 'proxies':Instagram})
 pgs.append({'name':'Youtube', 'type':'select', 'proxies':Youtube})
 pgs.append({'name':'Spotify', 'type':'select', 'proxies':Spotify})
@@ -99,6 +103,8 @@ rps['Youtube'] = {'type': 'http', 'behavior': 'classical', 'path':'./rule_provid
                            'url':'https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/YouTube.yaml'}
 rps['Disneyplus'] = {'type': 'http', 'behavior': 'classical', 'path':'./rule_provider/Disneyplus.yaml',
                            'url':'https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/DisneyPlus.yaml'}
+rps['Netflix'] = {'type': 'http', 'behavior': 'classical', 'path':'./rule_provider/Netflix.yaml',
+                           'url':'https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Netflix.yaml'}
 rps['Instagram'] = {'type': 'http', 'behavior': 'classical', 'path':'./rule_provider/Instagram.yaml',
                            'url':'https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Instagram.yaml'}
 
@@ -136,6 +142,7 @@ rs.append('DOMAIN-KEYWORD,elsevier,DIRECT')
 rs.append('DOMAIN-KEYWORD,sciencedirect,DIRECT')
 rs.append('DOMAIN-KEYWORD,springer,DIRECT')
 rs.append('RULE-SET,Disneyplus,Disneyplus')
+rs.append('RULE-SET,Netflix,Netflix')
 rs.append('RULE-SET,ProxyGFW,Proxy')
 rs.append('GEOIP,CN,DIRECT')
 rs.append('MATCH,Proxy')
