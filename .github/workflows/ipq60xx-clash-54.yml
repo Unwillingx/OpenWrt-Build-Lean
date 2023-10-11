@@ -8,7 +8,7 @@
 # Description: Build OpenWrt using GitHub Actions
 #
 
-name: ipq60xx clash
+name: ipq60xx clash 54
 
 on:
   repository_dispatch:
