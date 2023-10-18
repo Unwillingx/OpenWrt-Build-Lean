@@ -134,7 +134,7 @@ rps['Scholar'] = {'type': 'http', 'behavior': 'classical', 'path':'./rule_provid
 rps['ProxyGFW'] = {'type': 'http', 'behavior': 'classical', 'path':'./rule_provider/ProxyGFW.yaml',
                            'url':'https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/ProxyGFWlist.yaml'}
 rs = []
-rs.append('RULE-SET,Telegram,Telegram')
+rs.append('RULE-SET,Telegram,Telegram,no-resolve')
 rs.append('RULE-SET,Twitter,Twitter')
 rs.append('RULE-SET,Instagram,Instagram')
 rs.append('RULE-SET,Facebook,Instagram')
@@ -147,10 +147,10 @@ rs.append('DOMAIN-SUFFIX,ipify.org,Youtube')
 rs.append('DOMAIN-SUFFIX,ip.sb,Github')
 rs.append('RULE-SET,Disneyplus,Disneyplus')
 rs.append('RULE-SET,Netflix,Netflix')
-rs.append('RULE-SET,NetflixIP,Netflix')
+rs.append('RULE-SET,NetflixIP,Netflix,no-resolve')
 rs.append('RULE-SET,Scholar,DIRECT')
 rs.append('RULE-SET,ProxyGFW,Proxy')
-rs.append('GEOIP,CN,DIRECT')
+rs.append('GEOIP,CN,DIRECT,no-resolve')
 rs.append('MATCH,Proxy')
 z = {}
 for k in x.keys():
