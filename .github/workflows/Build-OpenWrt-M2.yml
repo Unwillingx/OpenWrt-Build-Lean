@@ -23,7 +23,7 @@ env:
   REPO_URL: https://github.com/coolsnowwolf/lede
   REPO_BRANCH: master
   CONFIG_FILE: m2.config
-  FEEDS_CONF: feeds.conf.default
+  FEEDS_CONF: feeds.conf2.default
   DIY_P1_SH: diy-part1.sh
   DIY_P2_SH: diy-part2.sh
   UPLOAD_BIN_DIR: false
@@ -63,7 +63,7 @@ jobs:
         df -hT $PWD
         git clone $REPO_URL -b $REPO_BRANCH openwrt
         cd openwrt
-        git checkout 7e397cd
+        git checkout 5c93ec6
         ln -sf /workdir/openwrt $GITHUB_WORKSPACE/openwrt
     - name: Load custom feeds
       run: |
