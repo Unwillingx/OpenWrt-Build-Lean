@@ -5,6 +5,7 @@ os.system('rm ./rule_provider/Google.yaml')
 os.system('rm ./rule_provider/Youtube.yaml')
 os.system('rm ./rule_provider/Disneyplus.yaml')
 os.system('rm ./rule_provider/Netflix.yaml')
+os.system('rm ./rule_provider/NetflixIP.yaml')
 os.system('rm ./rule_provider/Instagram.yaml')
 os.system('rm ./rule_provider/Facebook.yaml')
 os.system('rm ./rule_provider/Spotify.yaml')
@@ -12,10 +13,13 @@ os.system('rm ./rule_provider/Github.yaml')
 os.system('rm ./rule_provider/Twitter.yaml')
 os.system('rm ./rule_provider/Telegram.yaml')
 os.system('rm ./rule_provider/Microsoft.yaml')
+os.system('rm ./rule_provider/Scholar.yaml')
 os.system('rm ./rule_provider/ProxyGFW.yaml')
 os.system('wget -cO ./rule_provider/Google.yaml https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Google.yaml')
 os.system('wget -cO ./rule_provider/Youtube.yaml https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/YouTube.yaml')
 os.system('wget -cO ./rule_provider/Disneyplus.yaml https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/DisneyPlus.yaml')
+os.system('wget -cO ./rule_provider/Netflix.yaml https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Netflix.yaml')
+os.system('wget -cO ./rule_provider/NetflixIP.yaml https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/NetflixIP.yaml')
 os.system('wget -cO ./rule_provider/Instagram.yaml https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Instagram.yaml')
 os.system('wget -cO ./rule_provider/Facebook.yaml https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Facebook.yaml')
 os.system('wget -cO ./rule_provider/Spotify.yaml https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Spotify.yaml')
@@ -23,6 +27,7 @@ os.system('wget -cO ./rule_provider/Github.yaml https://raw.githubusercontent.co
 os.system('wget -cO ./rule_provider/Twitter.yaml https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Twitter.yaml')
 os.system('wget -cO ./rule_provider/Telegram.yaml https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/telegramcidr.txt')
 os.system('wget -cO ./rule_provider/Microsoft.yaml https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Microsoft.yaml')
+os.system('wget -cO ./rule_provider/Scholar.yaml https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Scholar.yaml')
 os.system('wget -cO ./rule_provider/ProxyGFW.yaml https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/ProxyGFWlist.yaml')
 
 with open('./config/xyz.yaml', 'rb') as f:
@@ -78,17 +83,17 @@ pgs.append({'name':'Twitter', 'type':'select', 'proxies':Twitter})
 pgs.append({'name':'Telegram', 'type':'select', 'proxies':Telegram})
 pgs.append({'name':'Microsoft', 'type':'select', 'proxies':Microsoft})
 pgs.append({'name':'HK', 'type': 'load-balance', 'strategy': 'consistent-hashing', 'disable-udp': False,
-            'proxies':HK, 'url': 'http://www.gstatic.com/generate_204', 'interval': '60'})
-pgs.append({'name':'SGP', 'type': 'url-test', 'proxies':SGP,
-            'url': 'http://www.gstatic.com/generate_204', 'interval': '60'})
+            'proxies':HK, 'url': 'http://www.gstatic.com/generate_204', 'interval': '300'})
+pgs.append({'name':'SGP', 'type': 'load-balance', 'strategy': 'consistent-hashing', 'disable-udp': False,
+            'proxies':SGP, 'url': 'http://www.gstatic.com/generate_204', 'interval': '300'})
 pgs.append({'name':'TW', 'type': 'url-test', 'proxies':TW,
-            'url': 'http://www.gstatic.com/generate_204', 'interval': '60'})
+            'url': 'http://www.gstatic.com/generate_204', 'interval': '300'})
 pgs.append({'name':'JP', 'type': 'load-balance', 'strategy': 'consistent-hashing', 'disable-udp': False,
-            'proxies':JP, 'url': 'http://www.gstatic.com/generate_204', 'interval': '60'})
+            'proxies':JP, 'url': 'http://www.gstatic.com/generate_204', 'interval': '300'})
 pgs.append({'name':'USA', 'type': 'url-test', 'proxies':USA,
-            'url': 'http://www.gstatic.com/generate_204', 'interval': '60'})
+            'url': 'http://www.gstatic.com/generate_204', 'interval': '300'})
 pgs.append({'name':'VN', 'type': 'load-balance', 'strategy': 'consistent-hashing', 'disable-udp': False,
-            'proxies':VN, 'url': 'http://www.gstatic.com/generate_204', 'interval': '60'})
+            'proxies':VN, 'url': 'http://www.gstatic.com/generate_204', 'interval': '300'})
 rps = {}
 rps['Google'] = {'type': 'http', 'behavior': 'classical', 'path':'./rule_provider/Google.yaml',
                            'url':'https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Google.yaml'}
@@ -114,8 +119,12 @@ rps['Twitter'] = {'type': 'http', 'behavior': 'classical', 'path':'./rule_provid
                            'url':'https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Twitter.yaml'}
 rps['Telegram'] = {'type': 'http', 'behavior': 'ipcidr', 'path':'./rule_provider/Telegram.yaml',
                            'url':'https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/telegramcidr.txt'}
+rps['NetflixIP'] = {'type': 'http', 'behavior': 'classical', 'path':'./rule_provider/NetflixIP.yaml',
+                           'url':'https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/NetflixIP.yaml'}
 rps['Microsoft'] = {'type': 'http', 'behavior': 'classical', 'path':'./rule_provider/Microsoft.yaml',
                            'url':'https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Microsoft.yaml'}
+rps['Scholar'] = {'type': 'http', 'behavior': 'classical', 'path':'./rule_provider/Scholar.yaml',
+                           'url':'https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Scholar.yaml'}
 rps['ProxyGFW'] = {'type': 'http', 'behavior': 'classical', 'path':'./rule_provider/ProxyGFW.yaml',
                            'url':'https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/ProxyGFWlist.yaml'}
 rs = []
@@ -130,14 +139,12 @@ rs.append('RULE-SET,Github,Github')
 rs.append('RULE-SET,Microsoft,Microsoft')
 rs.append('DOMAIN-SUFFIX,ipify.org,Youtube')
 rs.append('DOMAIN-SUFFIX,ip.sb,Github')
-rs.append('DOMAIN-KEYWORD,ieee,DIRECT')
-rs.append('DOMAIN-KEYWORD,elsevier,DIRECT')
-rs.append('DOMAIN-KEYWORD,sciencedirect,DIRECT')
-rs.append('DOMAIN-KEYWORD,springer,DIRECT')
 rs.append('RULE-SET,Disneyplus,Disneyplus')
 rs.append('RULE-SET,Netflix,Netflix')
+rs.append('RULE-SET,NetflixIP,Netflix')
+rs.append('RULE-SET,Scholar,DIRECT')
 rs.append('RULE-SET,ProxyGFW,Proxy')
-rs.append('GEOIP,CN,DIRECT')
+rs.append('GEOIP,CN,DIRECT,no-resolve')
 rs.append('MATCH,Proxy')
 z = {}
 for k in x.keys():
@@ -148,7 +155,7 @@ for k in x.keys():
     else:    
         z[k] = x[k]
 z['rule-providers'] = rps
-with open('./config/myconfig.yaml', 'w', encoding='utf-8') as file:
+with open('./config/myconfig.yaml', 'w') as file:
     file.write(yaml.dump(z, allow_unicode=True))
 os.system('service openclash restart')
 
