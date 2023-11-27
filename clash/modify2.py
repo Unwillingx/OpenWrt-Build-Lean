@@ -42,6 +42,7 @@ TW = []
 ML = []
 USA = []
 TK = []
+testtime='60'
 for p in x['proxies']:
     name = p['name']
     if 'Hong Kong' in name:
@@ -91,19 +92,19 @@ pgs.append({'name':'Telegram', 'type':'select', 'proxies':Telegram})
 pgs.append({'name':'OpenAI', 'type':'select', 'proxies':OpenAI})
 pgs.append({'name':'Microsoft', 'type':'select', 'proxies':Microsoft})
 pgs.append({'name':'HK', 'type': 'load-balance', 'strategy': 'consistent-hashing', 'disable-udp': False,
-            'proxies':HK, 'url': 'http://www.gstatic.com/generate_204', 'interval': '300'})
+            'proxies':HK, 'url': 'http://www.gstatic.com/generate_204', 'interval': testtime})
 pgs.append({'name':'SGP', 'type': 'load-balance', 'strategy': 'consistent-hashing', 'disable-udp': False,
-            'proxies':SGP, 'url': 'http://www.gstatic.com/generate_204', 'interval': '300'})
+            'proxies':SGP, 'url': 'http://www.gstatic.com/generate_204', 'interval': testtime})
 pgs.append({'name':'TW', 'type': 'load-balance', 'strategy': 'consistent-hashing', 'disable-udp': False,
-            'proxies':TW, 'url': 'http://www.gstatic.com/generate_204', 'interval': '300'})
+            'proxies':TW, 'url': 'http://www.gstatic.com/generate_204', 'interval': testtime})
 pgs.append({'name':'JP', 'type': 'load-balance', 'strategy': 'consistent-hashing', 'disable-udp': False,
-            'proxies':JP, 'url': 'http://www.gstatic.com/generate_204', 'interval': '300'})
+            'proxies':JP, 'url': 'http://www.gstatic.com/generate_204', 'interval': testtime})
 pgs.append({'name':'USA', 'type': 'url-test', 'proxies':USA,
-            'url': 'http://www.gstatic.com/generate_204', 'interval': '300'})
+            'url': 'http://www.gstatic.com/generate_204', 'interval': testtime})
 pgs.append({'name':'ML', 'type': 'url-test', 'proxies':ML,
-            'url': 'http://www.gstatic.com/generate_204', 'interval': '300'})
+            'url': 'http://www.gstatic.com/generate_204', 'interval': testtime})
 pgs.append({'name':'TK', 'type': 'url-test', 'proxies':TK,
-            'url': 'http://www.gstatic.com/generate_204', 'interval': '300'})
+            'url': 'http://www.gstatic.com/generate_204', 'interval': testtime})
 rps = {}
 rps['Google'] = {'type': 'http', 'behavior': 'classical', 'path':'./rule_provider/Google.yaml',
                            'url':'https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Google.yaml'}
