@@ -13,6 +13,7 @@ os.system('rm ./rule_provider/Github.yaml')
 os.system('rm ./rule_provider/Twitter.yaml')
 os.system('rm ./rule_provider/Telegram.yaml')
 os.system('rm ./rule_provider/Microsoft.yaml')
+os.system('rm ./rule_provider/OpenAI.yaml')
 os.system('rm ./rule_provider/Scholar.yaml')
 os.system('rm ./rule_provider/ProxyGFW.yaml')
 os.system('wget -cO ./rule_provider/Google.yaml https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Google.yaml')
@@ -28,6 +29,7 @@ os.system('wget -cO ./rule_provider/Twitter.yaml https://raw.githubusercontent.c
 os.system('wget -cO ./rule_provider/Telegram.yaml https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/telegramcidr.txt')
 os.system('wget -cO ./rule_provider/Microsoft.yaml https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Microsoft.yaml')
 os.system('wget -cO ./rule_provider/Scholar.yaml https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Scholar.yaml')
+os.system('wget -cO ./rule_provider/OpenAI.yaml https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/OpenAi.yaml')
 os.system('wget -cO ./rule_provider/ProxyGFW.yaml https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/ProxyGFWlist.yaml')
 
 with open('./config/xyz.yaml', 'rb') as f:
@@ -68,6 +70,7 @@ Spotify = ['HK', 'SGP', 'JP', 'TW', 'USA', 'VN', 'DIRECT']
 Github = ['HK', 'SGP', 'JP', 'TW', 'USA', 'VN']
 Twitter = ['HK', 'SGP', 'JP', 'TW', 'USA', 'VN']
 Telegram = ['HK', 'SGP', 'JP', 'TW', 'USA', 'VN']
+OpenAI = ['HK', 'SGP', 'JP', 'TW', 'USA', 'VN']
 Microsoft = ['HK', 'SGP', 'JP', 'TW', 'USA', 'VN', 'DIRECT']
 
 pgs = []
@@ -81,6 +84,7 @@ pgs.append({'name':'Spotify', 'type':'select', 'proxies':Spotify})
 pgs.append({'name':'Github', 'type':'select', 'proxies':Github})
 pgs.append({'name':'Twitter', 'type':'select', 'proxies':Twitter})
 pgs.append({'name':'Telegram', 'type':'select', 'proxies':Telegram})
+pgs.append({'name':'OpenAI', 'type':'select', 'proxies':OpenAI})
 pgs.append({'name':'Microsoft', 'type':'select', 'proxies':Microsoft})
 pgs.append({'name':'HK', 'type': 'load-balance', 'strategy': 'consistent-hashing', 'disable-udp': False,
             'proxies':HK, 'url': 'http://www.gstatic.com/generate_204', 'interval': '300'})
@@ -123,6 +127,8 @@ rps['NetflixIP'] = {'type': 'http', 'behavior': 'classical', 'path':'./rule_prov
                            'url':'https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/NetflixIP.yaml'}
 rps['Microsoft'] = {'type': 'http', 'behavior': 'classical', 'path':'./rule_provider/Microsoft.yaml',
                            'url':'https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Microsoft.yaml'}
+rps['OpenAI'] = {'type': 'http', 'behavior': 'classical', 'path':'./rule_provider/OpenAI.yaml',
+                           'url':'https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/OpenAi.yaml'}
 rps['Scholar'] = {'type': 'http', 'behavior': 'classical', 'path':'./rule_provider/Scholar.yaml',
                            'url':'https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Scholar.yaml'}
 rps['ProxyGFW'] = {'type': 'http', 'behavior': 'classical', 'path':'./rule_provider/ProxyGFW.yaml',
@@ -136,6 +142,7 @@ rs.append('RULE-SET,Youtube,Youtube')
 rs.append('RULE-SET,Google,Google')
 rs.append('RULE-SET,Spotify,Spotify')
 rs.append('RULE-SET,Github,Github')
+rs.append('RULE-SET,OpenAI,OpenAI')
 rs.append('RULE-SET,Microsoft,Microsoft')
 rs.append('DOMAIN-SUFFIX,ipify.org,Youtube')
 rs.append('DOMAIN-SUFFIX,ip.sb,Github')
