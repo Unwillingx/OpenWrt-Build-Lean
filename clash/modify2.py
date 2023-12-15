@@ -172,4 +172,4 @@ z['rule-providers'] = rps
 os.system('rm ./config/myconfig2.yaml')
 with open('./config/myconfig2.yaml', 'w') as file:
     file.write(yaml.dump(z, allow_unicode=True))
-os.system('service openclash restart')
+os.system('/etc/init.d/openclash restart')
