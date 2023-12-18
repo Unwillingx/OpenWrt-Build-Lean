@@ -69,13 +69,13 @@ for p in x['proxies']:
 Google = Proxy[7:]
 Disneyplus = Google
 Netflix = Google
+OpenAI = Google
 Instagram = ['HK', 'SGP', 'JP', 'TW', 'USA', 'ML', 'TK']
 Youtube = ['HK', 'SGP', 'JP', 'TW', 'USA', 'ML', 'TK']
 Spotify = ['HK', 'SGP', 'JP', 'TW', 'USA', 'ML', 'TK', 'DIRECT']
 Github = ['HK', 'SGP', 'JP', 'TW', 'USA', 'ML', 'TK']
 Twitter = ['HK', 'SGP', 'JP', 'TW', 'USA', 'ML', 'TK']
 Telegram = ['HK', 'SGP', 'JP', 'TW', 'USA', 'ML', 'TK']
-OpenAI = ['HK', 'SGP', 'JP', 'TW', 'USA', 'ML', 'TK']
 Microsoft = ['HK', 'SGP', 'JP', 'TW', 'USA', 'ML', 'TK', 'DIRECT']
 
 pgs = []
@@ -83,13 +83,13 @@ pgs.append({'name':'Proxy', 'type':'select', 'proxies':Proxy})
 pgs.append({'name':'Google', 'type':'select', 'proxies':Google})
 pgs.append({'name':'Disneyplus', 'type':'select', 'proxies':Disneyplus})
 pgs.append({'name':'Netflix', 'type':'select', 'proxies':Netflix})
+pgs.append({'name':'OpenAI', 'type':'select', 'proxies':OpenAI})
 pgs.append({'name':'Instagram', 'type':'select', 'proxies':Instagram})
 pgs.append({'name':'Youtube', 'type':'select', 'proxies':Youtube})
 pgs.append({'name':'Spotify', 'type':'select', 'proxies':Spotify})
 pgs.append({'name':'Github', 'type':'select', 'proxies':Github})
 pgs.append({'name':'Twitter', 'type':'select', 'proxies':Twitter})
 pgs.append({'name':'Telegram', 'type':'select', 'proxies':Telegram})
-pgs.append({'name':'OpenAI', 'type':'select', 'proxies':OpenAI})
 pgs.append({'name':'Microsoft', 'type':'select', 'proxies':Microsoft})
 pgs.append({'name':'HK', 'type': 'load-balance', 'strategy': 'consistent-hashing', 'disable-udp': False,
             'proxies':HK, 'url': 'http://www.gstatic.com/generate_204', 'interval': testtime})
