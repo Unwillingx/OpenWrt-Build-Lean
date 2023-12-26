@@ -49,7 +49,7 @@ for p in x['proxies']:
     elif '日' in name:
         Proxy.append(name)
         JP.append(name)
-    elif '狮' in name:
+    elif '城' in name:
         Proxy.append(name)
         SGP.append(name)
     elif '台' in name:
