@@ -148,4 +148,17 @@ rs.append('RULE-SET,Netflix,Netflix')
 rs.append('RULE-SET,NetflixIP,Netflix')
 rs.append('RULE-SET,Scholar,DIRECT')
 rs.append('RULE-SET,ProxyGFW,Proxy')
-rs.appe
+rs.append('GEOIP,CN,DIRECT,no-resolve')
+rs.append('MATCH,Proxy')
+z = {}
+for k in x.keys():
+    if k == 'proxy-groups':
+        z[k] = pgs
+    elif k == 'rules':
+        z[k] = rs 
+    else:    
+        z[k] = x[k]
+z['rule-providers'] = rps
+with open('./config/myconfig4.yaml', 'w') as file:
+    file.write(yaml.dump(z, allow_unicode=True))
+os.system('/etc/init.d/openclash restart')
