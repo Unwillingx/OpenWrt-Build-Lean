@@ -156,6 +156,7 @@ for k in x.keys():
     else:    
         z[k] = x[k]
 z['rule-providers'] = rps
+os.system('rm ./config/myconfig4.yaml')
 with open('./config/myconfig4.yaml', 'w') as file:
     file.write(yaml.dump(z, allow_unicode=True))
 os.system('/etc/init.d/openclash restart')
