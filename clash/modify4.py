@@ -58,9 +58,6 @@ for p in x['proxies']:
     elif '美' in name:
         Proxy.append(name)
         USA.append(name)
-    elif '南' in name:
-        Proxy.append(name)
-        VN.append(name)
     else:
         Proxy.append(name)
         OT.append(name)
