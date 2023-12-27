@@ -55,7 +55,7 @@ for p in x['proxies']:
     elif 'TW' in name:
         Proxy.append(name)
         TW.append(name)
-    elif 'USA' in name:
+    elif 'US' in name:
         Proxy.append(name)
         USA.append(name)
     else:
