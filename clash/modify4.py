@@ -43,19 +43,19 @@ USA = []
 OT = []
 for p in x['proxies']:
     name = p['name']
-    if '香' in name:
+    if 'HK' in name:
         Proxy.append(name)
         HK.append(name)
-    elif '日' in name:
+    elif 'JP' in name:
         Proxy.append(name)
         JP.append(name)
-    elif '城' in name:
+    elif 'SG' in name:
         Proxy.append(name)
         SGP.append(name)
-    elif '台' in name:
+    elif 'TW' in name:
         Proxy.append(name)
         TW.append(name)
-    elif '美' in name:
+    elif 'USA' in name:
         Proxy.append(name)
         USA.append(name)
     else:
