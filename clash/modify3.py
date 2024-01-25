@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 import yaml
 import os
 os.system('rm ./rule_provider/Google.yaml')
