@@ -97,6 +97,7 @@ pgs.append({'name':'JP', 'type': 'load-balance', 'strategy': 'consistent-hashing
             'proxies':JP, 'url': 'http://www.gstatic.com/generate_204', 'interval': testtime})
 pgs.append({'name':'USA', 'type': 'url-test', 'proxies':USA,
             'url': 'http://www.gstatic.com/generate_204', 'interval': testtime})
+pgs.append({'name':'OT', 'type': 'select', 'proxies':OT})
 rps = {}
 rps['Google'] = {'type': 'http', 'behavior': 'classical', 'path':'./rule_provider/Google.yaml',
                            'url':'https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Google.yaml'}
