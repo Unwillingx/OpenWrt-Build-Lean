@@ -34,12 +34,13 @@ os.system('wget -cO ./rule_provider/ProxyGFW.yaml https://raw.githubusercontent.
 
 with open('./config/uv.yaml', 'rb') as f:
     x = yaml.safe_load(f)
-Proxy = ['HK', 'SGP', 'JP', 'TW', 'USA']
+Proxy = ['HK', 'SGP', 'JP', 'TW', 'USA', 'OT']
 HK = []
 SGP = []
 JP = []
 TW = []
 USA = []
+OT = []
 testtime='60'
 for p in x['proxies']:
     name = p['name']
@@ -58,17 +59,20 @@ for p in x['proxies']:
     elif '美' in name:
         Proxy.append(name)
         USA.append(name)
-Google = Proxy[5:]
+    else:
+        Proxy.append(name)
+        OT.append(name)
+Google = Proxy[6:]
 Disneyplus = Google
 Netflix = Google
 OpenAI = Google
-Instagram = ['HK', 'SGP', 'JP', 'TW', 'USA']
-Youtube = ['HK', 'SGP', 'JP', 'TW', 'USA']
-Spotify = ['HK', 'SGP', 'JP', 'TW', 'USA', 'DIRECT']
-Github = ['HK', 'SGP', 'JP', 'TW', 'USA']
-Twitter = ['HK', 'SGP', 'JP', 'TW', 'USA']
-Telegram = ['HK', 'SGP', 'JP', 'TW', 'USA']
-Microsoft = ['HK', 'SGP', 'JP', 'TW', 'USA', 'DIRECT']
+Instagram = Proxy[:6]
+Youtube = Proxy[:6]
+Spotify = Proxy[:6] + ['DIRECT']
+Github = Proxy[:6]
+Twitter = Proxy[:6]
+Telegram = Proxy[:6]
+Microsoft = Spotify
 
 pgs = []
 pgs.append({'name':'Proxy', 'type':'select', 'proxies':Proxy})
