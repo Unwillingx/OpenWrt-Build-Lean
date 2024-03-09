@@ -32,8 +32,6 @@ os.system('wget -cO ./rule_provider/Scholar.yaml https://raw.githubusercontent.c
 os.system('wget -cO ./rule_provider/OpenAI.yaml https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/OpenAi.yaml')
 os.system('wget -cO ./rule_provider/ProxyGFW.yaml https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/ProxyGFWlist.yaml')
 
-os.system('/usr/share/openclash/openclash.sh')
-
 with open('./config/uv.yaml', 'rb') as f:
     x = yaml.safe_load(f)
 Proxy = ['HK', 'SGP', 'JP', 'TW', 'USA', 'OT']
