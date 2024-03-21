@@ -24,10 +24,10 @@ for p in x['proxies']:
     elif '新加坡' in name:
         Proxy.append(name)
         SGP.append(name)
-    elif '台湾' in name:
-        Proxy.append(name)
-        SGP.append(name)
     elif '韩国' in name:
+        Proxy.append(name)
+        KOR.append(name)
+    elif '台湾' in name:
         Proxy.append(name)
         TW.append(name)
     elif '美国' in name:
