@@ -1,36 +1,6 @@
 #!/usr/bin/env python3
 import yaml
 import os
-os.system('rm ./rule_provider/Google.yaml')
-os.system('rm ./rule_provider/Youtube.yaml')
-os.system('rm ./rule_provider/Disneyplus.yaml')
-os.system('rm ./rule_provider/Netflix.yaml')
-os.system('rm ./rule_provider/NetflixIP.yaml')
-os.system('rm ./rule_provider/Instagram.yaml')
-os.system('rm ./rule_provider/Facebook.yaml')
-os.system('rm ./rule_provider/Spotify.yaml')
-os.system('rm ./rule_provider/Github.yaml')
-os.system('rm ./rule_provider/Twitter.yaml')
-os.system('rm ./rule_provider/Telegram.yaml')
-os.system('rm ./rule_provider/Microsoft.yaml')
-os.system('rm ./rule_provider/Scholar.yaml')
-os.system('rm ./rule_provider/OpenAI.yaml')
-os.system('rm ./rule_provider/ProxyGFW.yaml')
-os.system('wget -cO ./rule_provider/Google.yaml https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Google.yaml')
-os.system('wget -cO ./rule_provider/Youtube.yaml https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/YouTube.yaml')
-os.system('wget -cO ./rule_provider/Disneyplus.yaml https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/DisneyPlus.yaml')
-os.system('wget -cO ./rule_provider/Netflix.yaml https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Netflix.yaml')
-os.system('wget -cO ./rule_provider/NetflixIP.yaml https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/NetflixIP.yaml')
-os.system('wget -cO ./rule_provider/Instagram.yaml https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Instagram.yaml')
-os.system('wget -cO ./rule_provider/Facebook.yaml https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Facebook.yaml')
-os.system('wget -cO ./rule_provider/Spotify.yaml https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Spotify.yaml')
-os.system('wget -cO ./rule_provider/Github.yaml https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Github.yaml')
-os.system('wget -cO ./rule_provider/Twitter.yaml https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Twitter.yaml')
-os.system('wget -cO ./rule_provider/Telegram.yaml https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/telegramcidr.txt')
-os.system('wget -cO ./rule_provider/Microsoft.yaml https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Microsoft.yaml')
-os.system('wget -cO ./rule_provider/Scholar.yaml https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Scholar.yaml')
-os.system('wget -cO ./rule_provider/OpenAI.yaml https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/OpenAi.yaml')
-os.system('wget -cO ./rule_provider/ProxyGFW.yaml https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/ProxyGFWlist.yaml')
 
 with open('./config/abc.yaml', 'rb') as f:
     x = yaml.safe_load(f)
@@ -45,21 +15,27 @@ testtime='60'
 for p in x['proxies']:
     name = p['name']
     if '新' in name:
+        p['server'] = '139.162.30.164'
         Proxy.append(name)
         SGP.append(name)
     elif '日' in name:
+        p['server'] = '172.233.91.16'
         Proxy.append(name)
         JPN.append(name)
     elif '尼' in name:
+        p['server'] = '172.232.224.111'
         Proxy.append(name)
         IDN.append(name)
     elif '澳' in name:
+        p['server'] = '172.105.163.90'
         Proxy.append(name)
         AUS.append(name)
     elif '美' in name:
+        p['server'] = '45.33.50.220'
         Proxy.append(name)
         USA.append(name)
     else:
+        p['server'] = '172.232.115.225'
         Proxy.append(name)
         IND.append(name)
 Google = Proxy[6:]
@@ -166,4 +142,4 @@ z['rule-providers'] = rps
 os.system('rm ./config/myconfig3.yaml')
 with open('./config/myconfig6.yaml', 'w') as file:
     file.write(yaml.dump(z, allow_unicode=True))
-os.system('/etc/init.d/openclash restart')
+# os.system('/etc/init.d/openclash restart')
